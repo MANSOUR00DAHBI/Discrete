@@ -44,13 +44,13 @@ int main() {
 		printf(" integer is 27 that a remainder %d when it is divided by 5 and remainder of %d when it is divided by 6 \n",
 			(27 % 5), (27 % 6));
      
-	   int a[3] = {25,10,2}, b[2]={3,4};
-	   int sets[2]={0};
+	   int a[3] = {25,10,2}, b[3]={3,4,7};
+	   int sets[3] ;
 	  for (int i = 0 ;i <= 2 ; ++i ) {
 		  //for (int j = 0;j < 2;++j) {
-			  // sets[i] =a[i];
+			   sets[3] = {a[i],b[i], a[i] + b[i]};
 			 
-			  printf(" a[%d] : %d \n",i,a[i]);
+			  printf(" a[%d] : %d  set[%d] :%d\n",i,a[i],i,sets[i]);
 		  //}
 	  }
 	return 0;
