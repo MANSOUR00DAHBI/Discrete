@@ -34,12 +34,29 @@ int UnviversalConditionalStatements(int Number) {
 		return -1;
 	}
 }
+ // a / 5 = 2 
 int main() {
 	  int Number = 0;
       int positivenmber =
 	  UnviversalConditionalStatements(Number);
  
 		printf(" positive Number %d \n",positivenmber);
-		
+		printf(" integer is 27 that a remainder %d when it is divided by 5 and remainder of %d when it is divided by 6 \n",
+			(27 % 5), (27 % 6));
+     
+	   int a[3] = {25,10,2}, b[2]={3,4};
+	   int sets[2]={0};
+	  for (int i = 0 ;i <= 2 ; ++i ) {
+		  //for (int j = 0;j < 2;++j) {
+			  // sets[i] =a[i];
+			 
+			  printf(" a[%d] : %d \n",i,a[i]);
+		  //}
+	  }
 	return 0;
 }
+/*
+0724422529
+ mlak 
+
+*/
