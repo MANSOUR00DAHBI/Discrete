@@ -21,38 +21,39 @@
 
 #include <stdio.h>
 
-int UnviversalConditionalStatements(int Number) {
-	
-	printf(" Entre Number : ");
-    scanf("%d",&Number);
-	if (Number > 0 ) {
-       printf(" this %3d is positive bycase greater than Ziro\n", Number);
-		return Number ; 
-	}
-	else{
-		printf(" this %3d is not positive bycase less than Ziro\n", Number);
-		return -1;
-	}
-}
+
  // a / 5 = 2 
 int main() {
-	  int Number = 0;
-      int positivenmber =
-	  UnviversalConditionalStatements(Number);
- 
-		printf(" positive Number %d \n",positivenmber);
-		printf(" integer is 27 that a remainder %d when it is divided by 5 and remainder of %d when it is divided by 6 \n",
-			(27 % 5), (27 % 6));
-     
-	   int a[3] = {25,10,2}, b[3]={3,4,7};
-	   int sets[3] ;
-	  for (int i = 0 ;i <= 2 ; ++i ) {
-		  //for (int j = 0;j < 2;++j) {
-			   sets[3] = {a[i],b[i], a[i] + b[i]};
-			 
-			  printf(" a[%d] : %d  set[%d] :%d\n",i,a[i],i,sets[i]);
-		  //}
-	  }
+     size_t q[3] = {1,2,3}, p[3] ={1,2} ;
+     size_t sum_qp[6] ={0};
+     size_t sum_pq[6] = { 0 };
+     size_t sum_pp[6] = { 0 };
+      for(size_t i = 0; i < 3; ++i)
+      {
+          sum_qp[i] = q[i] * p[0];
+          sum_qp[i + 3] = q[i] * p[1];
+
+          sum_pq[i] = p[0] * q[i]  ;
+          sum_pq[i + 3] = p[1] * q[i];
+
+          sum_pp[i] = p[0] * p[i];
+          sum_pp[i + 3] = p[1] * p[i];
+         
+      }
+      for (size_t i = 0; i < 6; ++i) {
+          printf("Sum q*p[%zu] : %zu ", i + 1, sum_qp[i]);
+          printf("|Sum p*q[%zu] : %zu ", i + 1, sum_pq[i]);
+          printf("|Sum p*p[%zu] : %zu \n", i + 1, sum_pp[i]);
+      }
+     for (float j = -3; j < 4; ++j) {
+         for (float i = -4; i < 5; ++i) {
+            if ( i == 0 && j == 0 )
+                printf("0 ");
+            else 
+            printf(". ");
+         }
+            printf("\n");
+     }
 	return 0;
 }
 /*
