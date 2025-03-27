@@ -22,35 +22,30 @@
 #include <stdio.h>
 
 
- // a / 5 = 2 
 int main() {
-     size_t q[3] = {1,2,3}, p[3] ={1,2} ;
-     size_t sum_qp[6] ={0};
-     size_t sum_pq[6] = { 0 };
-     size_t sum_pp[6] = { 0 };
-      for(size_t i = 0; i < 3; ++i)
-      {
-          sum_qp[i] = q[i] * p[0];
-          sum_qp[i + 3] = q[i] * p[1];
-
-          sum_pq[i] = p[0] * q[i]  ;
-          sum_pq[i + 3] = p[1] * q[i];
-
-          sum_pp[i] = p[0] * p[i];
-          sum_pp[i + 3] = p[1] * p[i];
-         
+      float R[2]={-1,-1}  ;
+      float sum_RR[4] ={0};
+      for (size_t i = 0; i < 2; ++i) {
+        sum_RR[i] = R[i] * R[0];
+        sum_RR[i + 2] = R[i] * R[1];
+  
       }
-      for (size_t i = 0; i < 6; ++i) {
-          printf("Sum q*p[%zu] : %zu ", i + 1, sum_qp[i]);
-          printf("|Sum p*q[%zu] : %zu ", i + 1, sum_pq[i]);
-          printf("|Sum p*p[%zu] : %zu \n", i + 1, sum_pp[i]);
+
+      for (size_t i = 0; i < 4; ++i) {
+
+          printf("|Sum R*R[%zu] : %f \n", i + 1, sum_RR[i]);
       }
      for (float j = -3; j < 4; ++j) {
          for (float i = -4; i < 5; ++i) {
             if ( i == 0 && j == 0 )
                 printf("0 ");
-            else 
+            else if(R[0]==j && R[1]==i)
+            printf("* ");
+
+
+             else 
             printf(". ");
+
          }
             printf("\n");
      }
