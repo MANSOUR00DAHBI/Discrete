@@ -23,19 +23,27 @@
 
 
 int main() {
-      float R[2]={-1,-1}  ;
-      float sum_RR[4] ={0};
-      for (size_t i = 0; i < 2; ++i) {
-        sum_RR[i] = R[i] * R[0];
-        sum_RR[i + 2] = R[i] * R[1];
-  
-      }
+   
+      float R[2]={-3,2}  ;
+      float sum_RR[2][3] = { {2,4,6},
+                             {1,3,5} };
+      float A[3]={2,4,6} , B[3]={1,3,5}  ;
+   
+#if 1
+      printf(" Set \n");
+      for (size_t x = 0; x < 3;++x) {
+            for (size_t y = 0; y < 3; ++y) {
+                printf(" (%.0f,%.0f)",A[x],B[y]);
+            }printf("\n");
+      } printf(" MAtrex \n");
+      printf("{\n");
+      for (size_t x = 0; x < 2;++x) {
+          for (size_t y = 0; y < 3; ++y) {             
+              printf(" %.0f ,", sum_RR[x][y]);
+          }printf(" \n");
+      }printf("}\n");
 
-      for (size_t i = 0; i < 4; ++i) {
-
-          printf("|Sum R*R[%zu] : %f \n", i + 1, sum_RR[i]);
-      }
-     for (float j = -3; j < 4; ++j) {
+     for (float j = -4; j < 5; ++j) {
          for (float i = -4; i < 5; ++i) {
             if ( i == 0 && j == 0 )
                 printf("0 ");
@@ -49,6 +57,10 @@ int main() {
          }
             printf("\n");
      }
+#else 
+    
+ 
+#endif  
 	return 0;
 }
 /*
